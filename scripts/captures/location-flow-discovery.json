@@ -1,0 +1,49 @@
+{
+  "log": {
+    "version": "1.2",
+    "creator": {
+      "name": "rohlik-research",
+      "version": "8d5ed82"
+    },
+    "pages": [
+      {
+        "startedDateTime": "2025-01-26T13:00:00.000Z",
+        "id": "page_location_discovery",
+        "title": "Location Setup Flow - API Discovery",
+        "pageTimings": {
+          "onContentLoad": 2000,
+          "onLoad": 4000
+        }
+      }
+    ],
+    "entries": [
+      {
+        "startedDateTime": "2025-01-26T13:00:00.000Z",
+        "time": 2000,
+        "request": {
+          "method": "GET",
+          "url": "https://www.rohlik.cz/?popup=delivery",
+          "httpVersion": "HTTP/2.0",
+          "headers": [
+            {"name": "User-Agent", "value": "rohlik-research/8d5ed82"},
+            {"name": "Accept", "value": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"}
+          ],
+          "queryString": [
+            {"name": "popup", "value": "delivery"}
+          ]
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "headers": [
+            {"name": "Content-Type", "value": "text/html; charset=utf-8"}
+          ],
+          "content": {
+            "mimeType": "text/html",
+            "text": "Location setup modal with address input field"
+          }
+        }
+      }
+    ]
+  }
+} 

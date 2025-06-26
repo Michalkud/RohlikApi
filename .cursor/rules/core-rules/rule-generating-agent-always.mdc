@@ -1,0 +1,25 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Cursor Rule Generation Standard
+
+## Critical Rules
+- All rules must be placed in `.cursor/rules/` or its subfolders, never elsewhere.
+- Use `.mdc` files with YAML frontmatter: description, globs, alwaysApply.
+- Organize rules by domain: `core-rules`, `ts-rules`, `tool-rules`, `testing-rules`, `ui-rules`, etc.
+- Rule file names must end with `-always.mdc`, `-auto.mdc`, `-agent.mdc`, or `-manual.mdc` according to type.
+- Always include valid and invalid examples in each rule.
+- Use concise, actionable language and avoid unnecessary explanation.
+- When updating or creating a rule, check for existing rules to update first.
+- Never use quotes around glob patterns; use comma-separated values only.
+- Prune or update rules as the codebase evolves.
+
+## Examples
+<example>
+  A new TypeScript style rule is requested. The agent creates `.cursor/rules/ts-rules/ts-style-agent.mdc` with proper frontmatter, actionable rules, and examples.
+</example>
+<example type="invalid">
+  A rule is created in the project root or without frontmatter, or with missing examples.
+</example>

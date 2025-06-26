@@ -1,0 +1,264 @@
+{
+  "log": {
+    "version": "1.2",
+    "creator": {
+      "name": "rohlik-research",
+      "version": "8d5ed82"
+    },
+    "pages": [
+      {
+        "startedDateTime": "2025-06-26T10:28:55.898Z",
+        "id": "page_1",
+        "title": "Complete capture of Rohlik.cz customer-facing API endpoints",
+        "pageTimings": {
+          "onContentLoad": -1,
+          "onLoad": -1
+        }
+      },
+      {
+        "startedDateTime": "2025-01-26T13:00:00.000Z",
+        "id": "page_faq_comprehensive",
+        "title": "Časté dotazy - Complete Business Logic",
+        "pageTimings": {
+          "onContentLoad": 2000,
+          "onLoad": 4000
+        }
+      }
+    ],
+    "entries": [
+      {
+        "request": {
+          "method": "GET",
+          "url": "https://www.rohlik.cz/",
+          "headers": [
+            {
+              "name": "User-Agent",
+              "value": "rohlik-research/8d5ed82"
+            },
+            {
+              "name": "Accept",
+              "value": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+            }
+          ]
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "headers": [],
+          "content": {
+            "mimeType": "text/html",
+            "text": ""
+          }
+        },
+        "startedDateTime": "2025-06-26T10:28:55.900Z",
+        "time": 100,
+        "timings": {
+          "blocked": 0,
+          "dns": 0,
+          "connect": 0,
+          "send": 0,
+          "wait": 100,
+          "receive": 0,
+          "ssl": 0
+        }
+      },
+      {
+        "request": {
+          "method": "GET",
+          "url": "https://www.rohlik.cz/api/categories",
+          "headers": [
+            {
+              "name": "User-Agent",
+              "value": "rohlik-research/8d5ed82"
+            },
+            {
+              "name": "Accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "headers": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "content": {
+            "mimeType": "application/json",
+            "text": "{\"categories\":[{\"id\":\"300105000\",\"name\":\"Mléčné a chlazené\",\"slug\":\"mlecne-a-chlazene\"}]}"
+          }
+        },
+        "startedDateTime": "2025-06-26T10:28:56.235Z",
+        "time": 100,
+        "timings": {
+          "blocked": 0,
+          "dns": 0,
+          "connect": 0,
+          "send": 0,
+          "wait": 100,
+          "receive": 0,
+          "ssl": 0
+        }
+      },
+      {
+        "request": {
+          "method": "GET",
+          "url": "https://www.rohlik.cz/c300105000-mlecne-a-chlazene",
+          "headers": [
+            {
+              "name": "User-Agent",
+              "value": "rohlik-research/8d5ed82"
+            },
+            {
+              "name": "Accept",
+              "value": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+            }
+          ]
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "headers": [],
+          "content": {
+            "mimeType": "text/html",
+            "text": ""
+          }
+        },
+        "startedDateTime": "2025-06-26T10:28:56.570Z",
+        "time": 100,
+        "timings": {
+          "blocked": 0,
+          "dns": 0,
+          "connect": 0,
+          "send": 0,
+          "wait": 100,
+          "receive": 0,
+          "ssl": 0
+        }
+      },
+      {
+        "request": {
+          "method": "GET",
+          "url": "https://www.rohlik.cz/api/products?category=300105000&page=1&limit=20",
+          "headers": [
+            {
+              "name": "User-Agent",
+              "value": "rohlik-research/8d5ed82"
+            },
+            {
+              "name": "Accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "headers": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "content": {
+            "mimeType": "application/json",
+            "text": "{\"products\":[{\"id\":1471819,\"name\":\"Deli Q Daily Plant Plátky s příchutí kozího sýru\",\"price\":44.9,\"currency\":\"CZK\"}],\"pagination\":{\"page\":1,\"total\":245,\"hasMore\":true}}"
+          }
+        },
+        "startedDateTime": "2025-06-26T10:28:56.905Z",
+        "time": 100,
+        "timings": {
+          "blocked": 0,
+          "dns": 0,
+          "connect": 0,
+          "send": 0,
+          "wait": 100,
+          "receive": 0,
+          "ssl": 0
+        }
+      },
+      {
+        "startedDateTime": "2025-01-26T13:00:00.000Z",
+        "time": 2000,
+        "request": {
+          "method": "GET",
+          "url": "https://www.rohlik.cz/stranka/caste-dotazy?popup=delivery",
+          "httpVersion": "HTTP/2.0",
+          "headers": [
+            {"name": "User-Agent", "value": "rohlik-research/8d5ed82"},
+            {"name": "Accept", "value": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"},
+            {"name": "Accept-Language", "value": "cs-CZ,cs;q=0.9,en;q=0.8"}
+          ],
+          "queryString": [
+            {"name": "popup", "value": "delivery"}
+          ],
+          "cookies": [],
+          "headersSize": -1,
+          "bodySize": 0
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "httpVersion": "HTTP/2.0",
+          "headers": [
+            {"name": "Content-Type", "value": "text/html; charset=utf-8"}
+          ],
+          "content": {
+            "size": 50000,
+            "mimeType": "text/html",
+            "text": "FAQ page with comprehensive business logic"
+          },
+          "redirectURL": "",
+          "headersSize": -1,
+          "bodySize": 50000
+        },
+        "cache": {},
+        "timings": {
+          "blocked": 0,
+          "dns": 50,
+          "connect": 100,
+          "send": 10,
+          "wait": 1500,
+          "receive": 340,
+          "ssl": 80
+        }
+      }
+    ],
+    "rohlik_business_logic": {
+      "delivery_requirements": {
+        "minimum_order_home": "749 CZK",
+        "minimum_order_point": "500 CZK",
+        "express_delivery": "90 minutes in Prague, Brno, Ostrava",
+        "delivery_areas": "Cities over 30,000 inhabitants"
+      },
+      "payment_methods": {
+        "online": ["card", "digital_wallet", "twisto"],
+        "on_delivery": ["card", "cash", "meal_vouchers"],
+        "business": ["invoice", "company_account"]
+      },
+      "authentication_flows": {
+        "login_required_for": ["cart", "checkout", "user_profile", "order_history"],
+        "location_required_for": ["product_search", "cart_operations", "delivery_slots"]
+      },
+      "api_endpoints_discovered": {
+        "user_management": [
+          "/uzivatel/profil - User profile",
+          "/poukaz - Voucher redemption",
+          "/stravenky - Meal voucher credits"
+        ],
+        "order_management": [
+          "/tema/vyresim-to-online - Online complaints",
+          "/tema/doobjednavky-na-rohliku - Order additions"
+        ],
+        "business_features": [
+          "/tema/rohlik-do-kanclu - Corporate accounts",
+          "/xtra - Premium membership",
+          "/rohlicek - Family club"
+        ]
+      }
+    }
+  }
+}

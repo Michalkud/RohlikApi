@@ -1,0 +1,25 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Global Project Standards
+
+## Critical Rules
+- Always use TypeScript with strict mode enabled.
+- Use pnpm for all package management and workspace operations.
+- Node.js 20+ (ESM) is the only supported runtime.
+- Store secrets in `.env.local` for dev, AWS Secrets Manager for prod.
+- All code must be formatted and linted before commit.
+- Use OpenAPI as the single source of truth for API contracts.
+- Document all public APIs and exported functions.
+- Use MCP endpoints for all agent/server communication.
+- Place all new packages in `packages/`, services in `services/`, and UI in `ui/`.
+
+## Examples
+<example>
+  A new service is added under `services/` and uses Fastify, TypeScript, and MCP endpoints, following the OpenAPI contract.
+</example>
+<example type="invalid">
+  A new package is created outside `packages/`, or a service is written in JavaScript or without strict typing.
+</example>

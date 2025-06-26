@@ -1,0 +1,72 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# UI Implementation Workflow
+
+## 1. Design System First
+- If user provides a screenshot, Figma link, or URL, use it as reference.
+- If only a name/brief is given, search and capture a screenshot using `@browsermcp/mcp@latest`.
+- Confirm with user if the screenshot may not match intent.
+- Extract tokens and generate `design.json` (palette, typography, spacing, radii, shadows, breakpoints, motion curves) at project root.
+- If user provides CSS variables, store in `theme.css` and import in `app/globals.css`.
+- Never inline styles—always use tokens (e.g., `var(--color-primary-500)`).
+
+## 2. Build the UI
+- Use React 18 / Next.js 14 + Tailwind + shadcn/ui.
+- Obey tokens from `design.json` or `theme.css`.
+- Mobile-first, specify breakpoints (e.g., 3-col ≥ 1024px, 1-col < 640px).
+- Meet WCAG AA contrast.
+
+## 3. Premium Components
+- Accept snippets from ReactBits, Aceternity UI, MagicUI, AlignUI, etc.
+- Install prerequisites (e.g., `framer-motion`) via shell.
+- Replace markup exactly as instructed.
+- Remove demo placeholders unless explicitly retained.
+
+## 4. Animations & Micro-Interactions
+- Use Framer Motion; duration ≤ 300ms; target only named elements (hover, scroll-into-view, etc.).
+- 3D/parallax: tilt ±8° unless user overrides.
+- Never apply global "animate everything" effects.
+
+## 5. Typography
+- Import Google Fonts via `<link>` or `next/font/google` as provided.
+- Apply only to selectors specified by user.
+
+## 6. Automated Validation (browsermcp)
+- Launch dev server.
+- Navigate to every new/changed route.
+- Assert via DOM inspection that CSS variables from `design.json`/`theme.css` are used (no hard-coded hex).
+- Capture screenshots: Desktop 1280×800, Mobile 375×812. Compare to reference if available.
+- Run accessibility & performance audit (Lighthouse), note blocking failures.
+- Report and fix mismatches (colors, spacing, layout, contrast, audit errors) before marking complete.
+
+## 7. Prompt Structure (Internal Checklist)
+- Objective (feature description)
+- Files/paths to create or edit
+- Design source (`design.json`, `theme.css`, component code)
+- Technical constraints (framework, libraries, breakpoints)
+- Accessibility/performance notes
+
+## 8. Troubleshooting
+- If tokens are ignored, ensure design file is imported and refactor styles.
+- If placeholder assets are visible, remove/replace and re-render.
+- If animation is janky, narrow scope or shorten duration.
+- If validation fails, iterate until browsermcp reports success.
+
+## 9. Delivery Checklist
+- [ ] Styles use tokens
+- [ ] Responsive breakpoints verified
+- [ ] Lint + type-check pass
+- [ ] Contrast meets WCAG AA
+- [ ] browsermcp validation screenshots captured & passed
+- [ ] No excessive animations
+- [ ] Component dependencies installed
+
+<example>
+  User provides a Figma link. Tokens are extracted, UI is built with shadcn/ui, validated with browsermcp, and screenshots are attached to the Linear issue.
+</example>
+<example type="invalid">
+  UI is built with hard-coded colors, no design tokens, and no validation screenshots are provided.
+</example>

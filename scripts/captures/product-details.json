@@ -1,0 +1,114 @@
+{
+  "log": {
+    "version": "1.2",
+    "creator": {
+      "name": "rohlik-research",
+      "version": "8d5ed82"
+    },
+    "pages": [
+      {
+        "startedDateTime": "2025-01-26T12:35:00.000Z",
+        "id": "page_product_detail",
+        "title": "Miil Eidam 30% plátky - Product Detail",
+        "pageTimings": {
+          "onContentLoad": 1200,
+          "onLoad": 2500
+        }
+      }
+    ],
+    "entries": [
+      {
+        "startedDateTime": "2025-01-26T12:35:00.000Z",
+        "time": 1200,
+        "request": {
+          "method": "GET",
+          "url": "https://www.rohlik.cz/1413424-miil-eidam-30-platky",
+          "httpVersion": "HTTP/2.0",
+          "headers": [
+            {"name": "User-Agent", "value": "rohlik-research/8d5ed82"},
+            {"name": "Accept", "value": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"},
+            {"name": "Accept-Language", "value": "cs,en;q=0.5"}
+          ],
+          "queryString": [],
+          "bodySize": 0
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "httpVersion": "HTTP/2.0",
+          "headers": [
+            {"name": "Content-Type", "value": "text/html; charset=utf-8"},
+            {"name": "Cache-Control", "value": "public, max-age=300"}
+          ],
+          "content": {
+            "size": 45000,
+            "mimeType": "text/html",
+            "text": "Product page with complete details"
+          },
+          "bodySize": 45000
+        },
+        "cache": {},
+        "timings": {
+          "blocked": 0,
+          "dns": 0,
+          "connect": 0,
+          "send": 0,
+          "wait": 1200,
+          "receive": 0,
+          "ssl": 0
+        },
+        "productData": {
+          "id": "1413424",
+          "name": "Miil Eidam 30% plátky",
+          "brand": "Miil",
+          "category": "Sýry > Plátkové > Eidam",
+          "price": {
+            "amount": 21.90,
+            "currency": "CZK",
+            "unit": "Kč",
+            "perKg": 219.00
+          },
+          "xtraPrice": {
+            "amount": 19.71,
+            "currency": "CZK",
+            "discount": "10%"
+          },
+          "weight": "100g",
+          "origin": "Německo",
+          "shelfLife": "21 dní",
+          "guaranteedMinShelfLife": "10 dní",
+          "nutrition": {
+            "energyKj": 1053,
+            "energyKcal": 252,
+            "fat": "16g",
+            "saturatedFat": "10g",
+            "carbohydrates": "0.1g",
+            "sugars": "0.1g",
+            "protein": "27g",
+            "salt": "1.7g",
+            "fiber": "0g"
+          },
+          "ingredients": [
+            "Pasterované kravské mléko",
+            "Jedlá sůl",
+            "Mlékárenské/sýrařské kultury",
+            "E509 - Chlorid vápenatý",
+            "Mikrobiální syřidlo"
+          ],
+          "allergens": ["Mléko"],
+          "fatContent": "min. 30%",
+          "dryMatterContent": "min. 49%",
+          "manufacturer": {
+            "name": "Milkpol spol. s r.o.",
+            "address": "Reinerova 1657/23, Praha 6, 163 00, Česká republika"
+          },
+          "storage": "Skladujte při teplotě od +2 °C do +8 °C",
+          "categories": [
+            {"name": "Plátkové", "url": "/c300105028-platkove"},
+            {"name": "Eidam", "url": "/c300114177-eidam"}
+          ]
+        }
+      }
+    ]
+  }
+}

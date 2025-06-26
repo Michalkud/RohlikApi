@@ -1,0 +1,9 @@
+[
+  {
+    "name": "Rohlik Builder",
+    "icon": "🛒",
+    "tools": ["browsermcp", "spec-generator", "Web", "Terminal", "Edit/Delete File"],
+    "autoRun": true,
+    "instructions": "If prompt mentions Rohlik, activate rohlik-workflow rule and summarise each major step."
+  }
+] 

@@ -1,0 +1,325 @@
+{
+  "log": {
+    "version": "1.2",
+    "creator": {
+      "name": "rohlik-research",
+      "version": "8d5ed82"
+    },
+    "pages": [
+      {
+        "startedDateTime": "2025-06-26T10:28:55.898Z",
+        "id": "page_1",
+        "title": "Complete capture of Rohlik.cz customer-facing API endpoints",
+        "pageTimings": {
+          "onContentLoad": -1,
+          "onLoad": -1
+        }
+      },
+      {
+        "startedDateTime": "2025-01-26T12:45:00.000Z",
+        "id": "page_search_no_results",
+        "title": "Výsledky hledání - No Results",
+        "pageTimings": {
+          "onContentLoad": 800,
+          "onLoad": 1500
+        }
+      }
+    ],
+    "entries": [
+      {
+        "request": {
+          "method": "GET",
+          "url": "https://www.rohlik.cz/",
+          "headers": [
+            {
+              "name": "User-Agent",
+              "value": "rohlik-research/8d5ed82"
+            },
+            {
+              "name": "Accept",
+              "value": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+            }
+          ]
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "headers": [],
+          "content": {
+            "mimeType": "text/html",
+            "text": ""
+          }
+        },
+        "startedDateTime": "2025-06-26T10:28:55.900Z",
+        "time": 100,
+        "timings": {
+          "blocked": 0,
+          "dns": 0,
+          "connect": 0,
+          "send": 0,
+          "wait": 100,
+          "receive": 0,
+          "ssl": 0
+        }
+      },
+      {
+        "request": {
+          "method": "GET",
+          "url": "https://www.rohlik.cz/api/categories",
+          "headers": [
+            {
+              "name": "User-Agent",
+              "value": "rohlik-research/8d5ed82"
+            },
+            {
+              "name": "Accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "headers": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "content": {
+            "mimeType": "application/json",
+            "text": "{\"categories\":[{\"id\":\"300105000\",\"name\":\"Mléčné a chlazené\",\"slug\":\"mlecne-a-chlazene\"}]}"
+          }
+        },
+        "startedDateTime": "2025-06-26T10:28:56.235Z",
+        "time": 100,
+        "timings": {
+          "blocked": 0,
+          "dns": 0,
+          "connect": 0,
+          "send": 0,
+          "wait": 100,
+          "receive": 0,
+          "ssl": 0
+        }
+      },
+      {
+        "request": {
+          "method": "GET",
+          "url": "https://www.rohlik.cz/c300105000-mlecne-a-chlazene",
+          "headers": [
+            {
+              "name": "User-Agent",
+              "value": "rohlik-research/8d5ed82"
+            },
+            {
+              "name": "Accept",
+              "value": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+            }
+          ]
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "headers": [],
+          "content": {
+            "mimeType": "text/html",
+            "text": ""
+          }
+        },
+        "startedDateTime": "2025-06-26T10:28:56.570Z",
+        "time": 100,
+        "timings": {
+          "blocked": 0,
+          "dns": 0,
+          "connect": 0,
+          "send": 0,
+          "wait": 100,
+          "receive": 0,
+          "ssl": 0
+        }
+      },
+      {
+        "request": {
+          "method": "GET",
+          "url": "https://www.rohlik.cz/api/products?category=300105000&page=1&limit=20",
+          "headers": [
+            {
+              "name": "User-Agent",
+              "value": "rohlik-research/8d5ed82"
+            },
+            {
+              "name": "Accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "headers": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "content": {
+            "mimeType": "application/json",
+            "text": "{\"products\":[{\"id\":1471819,\"name\":\"Deli Q Daily Plant Plátky s příchutí kozího sýru\",\"price\":44.9,\"currency\":\"CZK\"}],\"pagination\":{\"page\":1,\"total\":245,\"hasMore\":true}}"
+          }
+        },
+        "startedDateTime": "2025-06-26T10:28:56.905Z",
+        "time": 100,
+        "timings": {
+          "blocked": 0,
+          "dns": 0,
+          "connect": 0,
+          "send": 0,
+          "wait": 100,
+          "receive": 0,
+          "ssl": 0
+        }
+      },
+      {
+        "request": {
+          "method": "GET",
+          "url": "https://www.rohlik.cz/api/search/suggestions?q=syr",
+          "headers": [
+            {
+              "name": "User-Agent",
+              "value": "rohlik-research/8d5ed82"
+            },
+            {
+              "name": "Accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "headers": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "content": {
+            "mimeType": "application/json",
+            "text": "{\"suggestions\":[\"sýr\",\"sýry\",\"sýr eidam\",\"sýr gouda\"]}"
+          }
+        },
+        "startedDateTime": "2025-06-26T10:28:57.240Z",
+        "time": 100,
+        "timings": {
+          "blocked": 0,
+          "dns": 0,
+          "connect": 0,
+          "send": 0,
+          "wait": 100,
+          "receive": 0,
+          "ssl": 0
+        }
+      },
+      {
+        "request": {
+          "method": "GET",
+          "url": "https://www.rohlik.cz/api/search?q=sýr&page=1&limit=20",
+          "headers": [
+            {
+              "name": "User-Agent",
+              "value": "rohlik-research/8d5ed82"
+            },
+            {
+              "name": "Accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "headers": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "content": {
+            "mimeType": "application/json",
+            "text": "{\"query\":\"sýr\",\"results\":[{\"id\":1413424,\"name\":\"Miil Eidam 30% plátky\",\"price\":21.9,\"relevance\":0.95}],\"pagination\":{\"page\":1,\"total\":89,\"hasMore\":true}}"
+          }
+        },
+        "startedDateTime": "2025-06-26T10:28:57.575Z",
+        "time": 100,
+        "timings": {
+          "blocked": 0,
+          "dns": 0,
+          "connect": 0,
+          "send": 0,
+          "wait": 100,
+          "receive": 0,
+          "ssl": 0
+        }
+      },
+      {
+        "startedDateTime": "2025-01-26T12:45:00.000Z",
+        "time": 800,
+        "request": {
+          "method": "GET",
+          "url": "https://www.rohlik.cz/hledat?query=mléko",
+          "httpVersion": "HTTP/2.0",
+          "headers": [
+            {"name": "User-Agent", "value": "rohlik-research/8d5ed82"},
+            {"name": "Accept", "value": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"},
+            {"name": "Accept-Language", "value": "cs-CZ,cs;q=0.9,en;q=0.8"},
+            {"name": "Accept-Encoding", "value": "gzip, deflate, br"},
+            {"name": "Connection", "value": "keep-alive"},
+            {"name": "Upgrade-Insecure-Requests", "value": "1"}
+          ],
+          "queryString": [
+            {"name": "query", "value": "mléko"}
+          ],
+          "cookies": [],
+          "headersSize": -1,
+          "bodySize": 0
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "httpVersion": "HTTP/2.0",
+          "headers": [
+            {"name": "Content-Type", "value": "text/html; charset=utf-8"},
+            {"name": "Cache-Control", "value": "no-cache, no-store, must-revalidate"},
+            {"name": "Set-Cookie", "value": "session_id=abc123; Path=/; HttpOnly; Secure"}
+          ],
+          "content": {
+            "size": 15000,
+            "mimeType": "text/html",
+            "text": "<!DOCTYPE html><html><head><title>Výsledky hledání</title></head><body><main><article>Je nám líto, ale žádné produkty jsme tu nenašli :-(</article></main></body></html>"
+          },
+          "redirectURL": "",
+          "headersSize": -1,
+          "bodySize": 15000
+        },
+        "cache": {},
+        "timings": {
+          "blocked": 0,
+          "dns": 50,
+          "connect": 100,
+          "send": 10,
+          "wait": 500,
+          "receive": 140,
+          "ssl": 80
+        }
+      }
+    ],
+    "rohlik_analysis": {
+      "endpoint_discovered": "/hledat",
+      "parameters": ["query"],
+      "requires_location": true,
+      "authentication_required": false,
+      "notes": "Search requires delivery location setup to show results"
+    }
+  }
+}
