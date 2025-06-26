@@ -10,6 +10,8 @@ import { RohlikClient } from './src/clients/rohlik-client.js';
 import { productRoutes } from './src/routes/products.js';
 import { authRoutes } from './src/routes/auth.js';
 import { cartRoutes } from './src/routes/cart.js';
+import { locationRoutes } from './src/routes/location.js';
+import { orderRoutes } from './src/routes/orders.js';
 
 const fastify = Fastify({
   logger: {
@@ -53,10 +55,11 @@ async function buildServer() {
           consumes: ['application/json'],
           produces: ['application/json'],
           tags: [
-            { name: 'auth', description: 'Authentication endpoints' },
-            { name: 'products', description: 'Product catalog endpoints' },
-            { name: 'cart', description: 'Shopping cart endpoints' },
-            { name: 'orders', description: 'Order management endpoints' },
+            { name: 'Authentication', description: 'Authentication endpoints' },
+            { name: 'Products', description: 'Product catalog endpoints' },
+            { name: 'Cart', description: 'Shopping cart endpoints' },
+            { name: 'Location', description: 'Address and delivery management endpoints' },
+            { name: 'Orders', description: 'Order management and checkout endpoints' },
             { name: 'health', description: 'Health check endpoints' },
           ],
         },
@@ -212,6 +215,8 @@ async function buildServer() {
     await fastify.register(productRoutes, { prefix: '/api/products' });
     await fastify.register(authRoutes, { prefix: '/api/auth' });
     await fastify.register(cartRoutes, { prefix: '/api/cart' });
+    await fastify.register(locationRoutes);
+    await fastify.register(orderRoutes);
 
     middlewareLogger.info('Middleware server built successfully');
     return fastify;
