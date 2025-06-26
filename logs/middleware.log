@@ -1,0 +1,41 @@
+{"component":"SESSION_MANAGER","level":"info","message":"Session manager initialized","sessionTimeout":1800000,"timestamp":"2025-06-26 13:07:32"}
+{"baseURL":"https://www.rohlik.cz","component":"HTTP_CLIENT","level":"info","message":"Rohlik client initialized","timeout":30000,"timestamp":"2025-06-26 13:07:32"}
+{"component":"MIDDLEWARE","level":"info","message":"Middleware server built successfully","timestamp":"2025-06-26 13:07:32"}
+{"component":"MIDDLEWARE","level":"info","message":"🚀 Rohlik.cz Middleware Server running at http://0.0.0.0:3001","timestamp":"2025-06-26 13:07:32"}
+{"component":"MIDDLEWARE","level":"info","message":"📚 API Documentation available at http://0.0.0.0:3001/docs","timestamp":"2025-06-26 13:07:32"}
+{"component":"HTTP_CLIENT","level":"info","message":"Homepage loaded successfully","timestamp":"2025-06-26 13:07:41"}
+{"component":"HTTP_CLIENT","level":"info","message":"Product page loaded","productId":"1295189","timestamp":"2025-06-26 13:07:49"}
+{"component":"MIDDLEWARE","level":"info","message":"Received SIGTERM, shutting down gracefully...","timestamp":"2025-06-26 13:27:07"}
+{"component":"SESSION_MANAGER","level":"info","message":"Session manager initialized","sessionTimeout":1800000,"timestamp":"2025-06-26 13:27:09"}
+{"baseURL":"https://www.rohlik.cz","component":"HTTP_CLIENT","level":"info","message":"Rohlik client initialized","timeout":30000,"timestamp":"2025-06-26 13:27:09"}
+{"component":"SESSION_MANAGER","level":"info","message":"Session manager initialized","sessionTimeout":1800000,"timestamp":"2025-06-26 13:27:09"}
+{"baseURL":"https://www.rohlik.cz","component":"HTTP_CLIENT","level":"info","message":"Rohlik client initialized","timeout":30000,"timestamp":"2025-06-26 13:27:09"}
+{"component":"MIDDLEWARE","level":"info","message":"Middleware server built successfully","timestamp":"2025-06-26 13:27:09"}
+{"component":"MIDDLEWARE","level":"info","message":"🚀 Rohlik.cz Middleware Server running at http://127.0.0.1:3001","timestamp":"2025-06-26 13:27:09"}
+{"component":"MIDDLEWARE","level":"info","message":"📚 API Documentation available at http://127.0.0.1:3001/docs","timestamp":"2025-06-26 13:27:09"}
+{"component":"MIDDLEWARE","level":"info","message":"Known products request received","timestamp":"2025-06-26 13:27:19"}
+{"component":"PRODUCT_SERVICE","count":7,"level":"info","message":"Fetching multiple products","productIds":["1440986","1412825","1354611","1294559","1287919","1326593","1295189"],"timestamp":"2025-06-26 13:27:19"}
+{"component":"PRODUCT_SERVICE","level":"info","message":"Fetching product from Rohlik.cz","productId":"1440986","timestamp":"2025-06-26 13:27:19"}
+{"component":"PRODUCT_SERVICE","level":"info","message":"Fetching product from Rohlik.cz","productId":"1412825","timestamp":"2025-06-26 13:27:19"}
+{"component":"PRODUCT_SERVICE","level":"info","message":"Fetching product from Rohlik.cz","productId":"1354611","timestamp":"2025-06-26 13:27:19"}
+{"component":"PRODUCT_SERVICE","level":"info","message":"Fetching product from Rohlik.cz","productId":"1294559","timestamp":"2025-06-26 13:27:19"}
+{"component":"PRODUCT_SERVICE","level":"info","message":"Fetching product from Rohlik.cz","productId":"1287919","timestamp":"2025-06-26 13:27:19"}
+{"component":"HTML_PARSER","level":"info","message":"Product parsed successfully","price":95.4,"productId":"1354611","timestamp":"2025-06-26 13:27:20"}
+{"component":"PRODUCT_SERVICE","level":"info","message":"Product fetched and parsed successfully","price":95.4,"productId":"1354611","productName":"Unknown Product","timestamp":"2025-06-26 13:27:20"}
+{"component":"HTML_PARSER","level":"info","message":"Product parsed successfully","price":24.9,"productId":"1287919","timestamp":"2025-06-26 13:27:20"}
+{"component":"PRODUCT_SERVICE","level":"info","message":"Product fetched and parsed successfully","price":24.9,"productId":"1287919","productName":"Unknown Product","timestamp":"2025-06-26 13:27:20"}
+{"component":"HTML_PARSER","level":"info","message":"Product parsed successfully","price":122.95,"productId":"1440986","timestamp":"2025-06-26 13:27:20"}
+{"component":"PRODUCT_SERVICE","level":"info","message":"Product fetched and parsed successfully","price":122.95,"productId":"1440986","productName":"Unknown Product","timestamp":"2025-06-26 13:27:20"}
+{"component":"HTML_PARSER","level":"info","message":"Product parsed successfully","price":13.9,"productId":"1294559","timestamp":"2025-06-26 13:27:20"}
+{"component":"PRODUCT_SERVICE","level":"info","message":"Product fetched and parsed successfully","price":13.9,"productId":"1294559","productName":"Unknown Product","timestamp":"2025-06-26 13:27:20"}
+{"component":"HTML_PARSER","level":"info","message":"Product parsed successfully","price":129.9,"productId":"1412825","timestamp":"2025-06-26 13:27:20"}
+{"component":"PRODUCT_SERVICE","level":"info","message":"Product fetched and parsed successfully","price":129.9,"productId":"1412825","productName":"Unknown Product","timestamp":"2025-06-26 13:27:20"}
+{"component":"PRODUCT_SERVICE","level":"info","message":"Fetching product from Rohlik.cz","productId":"1326593","timestamp":"2025-06-26 13:27:21"}
+{"component":"PRODUCT_SERVICE","level":"info","message":"Fetching product from Rohlik.cz","productId":"1295189","timestamp":"2025-06-26 13:27:21"}
+{"component":"HTML_PARSER","level":"info","message":"Product parsed successfully","price":27.9,"productId":"1295189","timestamp":"2025-06-26 13:27:21"}
+{"component":"PRODUCT_SERVICE","level":"info","message":"Product fetched and parsed successfully","price":27.9,"productId":"1295189","productName":"Unknown Product","timestamp":"2025-06-26 13:27:21"}
+{"component":"HTML_PARSER","level":"info","message":"Product parsed successfully","price":57.9,"productId":"1326593","timestamp":"2025-06-26 13:27:21"}
+{"component":"PRODUCT_SERVICE","level":"info","message":"Product fetched and parsed successfully","price":57.9,"productId":"1326593","productName":"Unknown Product","timestamp":"2025-06-26 13:27:21"}
+{"component":"PRODUCT_SERVICE","level":"info","message":"Multiple products fetched","requested":7,"successful":7,"timestamp":"2025-06-26 13:27:21"}
+{"component":"MIDDLEWARE","level":"info","message":"Product request received","productId":"1295189","timestamp":"2025-06-26 13:27:33"}
+{"component":"PRODUCT_SERVICE","level":"info","message":"Product returned from cache","productId":"1295189","productName":"Unknown Product","timestamp":"2025-06-26 13:27:33"}

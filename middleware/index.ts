@@ -6,9 +6,9 @@ import { config } from './src/utils/config.js';
 import { middlewareLogger } from './src/utils/logger.js';
 import { RohlikClient } from './src/clients/rohlik-client.js';
 
-// Import route handlers (we'll create these next)
+// Import route handlers
+import { productRoutes } from './src/routes/products.js';
 // import { authRoutes } from './src/routes/auth.js';
-// import { productRoutes } from './src/routes/products.js';
 // import { cartRoutes } from './src/routes/cart.js';
 
 const fastify = Fastify({
@@ -208,9 +208,9 @@ async function buildServer() {
       }
     });
 
-    // Register route handlers (commented out until we create them)
+    // Register route handlers
+    await fastify.register(productRoutes);
     // await fastify.register(authRoutes, { prefix: '/api/auth', rohlikClient });
-    // await fastify.register(productRoutes, { prefix: '/api/products', rohlikClient });
     // await fastify.register(cartRoutes, { prefix: '/api/cart', rohlikClient });
 
     middlewareLogger.info('Middleware server built successfully');
