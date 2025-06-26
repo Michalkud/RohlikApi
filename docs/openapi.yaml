@@ -1,0 +1,226 @@
+openapi: 3.1.0
+info:
+  title: Rohlik.cz API
+  version: 1.0.0
+  description: Reverse-engineered API specification for Rohlik.cz online supermarket
+servers:
+  - url: https://www.rohlik.cz
+    description: Production server
+paths:
+  /:
+    get:
+      summary: GET /
+      responses:
+        "200":
+          description: OK
+  /api/categories:
+    get:
+      summary: GET /api/categories
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/getapicategoriesResponse200"
+  /{categoryId}-mlecne-a-chlazene:
+    get:
+      summary: GET /{categoryId}-mlecne-a-chlazene
+      responses:
+        "200":
+          description: OK
+  /api/products:
+    get:
+      summary: GET /api/products
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/getapiproductsResponse200"
+  /stranka/caste-dotazy:
+    get:
+      summary: GET /stranka/caste-dotazy
+      responses:
+        "200":
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+  /{id}-miil-eidam-30-platky:
+    get:
+      summary: GET /{id}-miil-eidam-30-platky
+      responses:
+        "200":
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+  /api/search/suggestions:
+    get:
+      summary: GET /api/search/suggestions
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/getapisearchsuggestionsResponse200"
+  /api/search:
+    get:
+      summary: GET /api/search
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/getapisearchResponse200"
+  /hledat:
+    get:
+      summary: GET /hledat
+      responses:
+        "200":
+          description: OK
+          content:
+            text/html:
+              schema:
+                type: string
+components:
+  schemas:
+    getapicategoriesResponse200:
+      type: object
+      properties:
+        categories:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                example: "300105000"
+              name:
+                type: string
+                example: Mléčné a chlazené
+              slug:
+                type: string
+                example: mlecne-a-chlazene
+            required:
+              - id
+              - name
+              - slug
+      required:
+        - categories
+    getapiproductsResponse200:
+      type: object
+      properties:
+        products:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: number
+                example: 1471819
+              name:
+                type: string
+                example: Deli Q Daily Plant Plátky s příchutí kozího sýru
+              price:
+                type: number
+                example: 44.9
+              currency:
+                type: string
+                example: CZK
+            required:
+              - id
+              - name
+              - price
+              - currency
+        pagination:
+          type: object
+          properties:
+            page:
+              type: number
+              example: 1
+            total:
+              type: number
+              example: 245
+            hasMore:
+              type: boolean
+              example: true
+          required:
+            - page
+            - total
+            - hasMore
+      required:
+        - products
+        - pagination
+    getapisearchsuggestionsResponse200:
+      type: object
+      properties:
+        suggestions:
+          type: array
+          items:
+            type: string
+            example: sýr
+      required:
+        - suggestions
+    getapisearchResponse200:
+      type: object
+      properties:
+        query:
+          type: string
+          example: sýr
+        results:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: number
+                example: 1413424
+              name:
+                type: string
+                example: Miil Eidam 30% plátky
+              price:
+                type: number
+                example: 21.9
+              relevance:
+                type: number
+                example: 0.95
+            required:
+              - id
+              - name
+              - price
+              - relevance
+        pagination:
+          type: object
+          properties:
+            page:
+              type: number
+              example: 1
+            total:
+              type: number
+              example: 89
+            hasMore:
+              type: boolean
+              example: true
+          required:
+            - page
+            - total
+            - hasMore
+      required:
+        - query
+        - results
+        - pagination
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+    SessionAuth:
+      type: apiKey
+      in: cookie
+      name: session

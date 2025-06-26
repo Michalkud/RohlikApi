@@ -1,0 +1,6 @@
+{
+  "install": "npm ci",
+  "terminals": [
+    { "name": "Dev server", "command": "npm run dev" }
+  ]
+} 

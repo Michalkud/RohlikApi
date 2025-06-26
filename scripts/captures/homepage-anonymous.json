@@ -1,0 +1,21 @@
+{
+  "log": {
+    "version": "1.2",
+    "creator": {
+      "name": "rohlik-research",
+      "version": "8d5ed82"
+    },
+    "pages": [
+      {
+        "startedDateTime": "2025-01-26T10:15:00.000Z",
+        "id": "page_1",
+        "title": "Rohlik.cz Homepage - Anonymous",
+        "pageTimings": {
+          "onContentLoad": 1500,
+          "onLoad": 3000
+        }
+      }
+    ],
+    "entries": []
+  }
+} 

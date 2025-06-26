@@ -1,0 +1,367 @@
+{
+  "session": "rohlik-capture-2025-06-26T10:29:17.869Z",
+  "startTime": "2025-06-26T10:29:17.870Z",
+  "pages": [
+    {
+      "url": "https://www.rohlik.cz",
+      "title": "Online supermarket Rohlik.cz — nejrychlejší doručení ve městě",
+      "timestamp": "2025-06-26T10:29:17.870Z"
+    },
+    {
+      "url": "https://www.rohlik.cz/c300105000-mlecne-a-chlazene",
+      "title": "Mléčné a chlazené",
+      "timestamp": "2025-06-26T10:29:17.870Z"
+    },
+    {
+      "url": "https://www.rohlik.cz/1413424-miil-eidam-30-platky",
+      "title": "Miil Eidam 30% plátky",
+      "timestamp": "2025-06-26T10:29:17.870Z"
+    }
+  ],
+  "requests": [],
+  "endpoints": [
+    {
+      "path": "/",
+      "method": "GET",
+      "description": "Homepage with category navigation and featured products",
+      "example": {
+        "categories": [
+          {
+            "id": "c300105000",
+            "name": "Mléčné a chlazené",
+            "url": "/c300105000-mlecne-a-chlazene"
+          }
+        ],
+        "featured_products": [],
+        "banners": []
+      }
+    },
+    {
+      "path": "/c{categoryId}-{categorySlug}",
+      "method": "GET",
+      "description": "Category page with products and subcategories",
+      "example": {
+        "category": {
+          "id": "c300105000",
+          "name": "Mléčné a chlazené"
+        },
+        "subcategories": [
+          {
+            "id": "c300105026",
+            "name": "Sýry",
+            "url": "/c300105026-syry"
+          },
+          {
+            "id": "c300105008",
+            "name": "Jogurty a mléčné dezerty"
+          }
+        ],
+        "products": [
+          {
+            "id": "1413424",
+            "name": "Miil Eidam 30% plátky",
+            "price": 21.9,
+            "currency": "CZK",
+            "unit": "100 g",
+            "price_per_kg": 219,
+            "url": "/1413424-miil-eidam-30-platky"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/{productId}-{productSlug}",
+      "method": "GET",
+      "description": "Product detail page with full information",
+      "example": {
+        "product": {
+          "id": "1413424",
+          "name": "Miil Eidam 30% plátky",
+          "brand": "Miil",
+          "price": 21.9,
+          "currency": "CZK",
+          "unit": "100 g",
+          "price_per_kg": 219,
+          "description": "Miil Eidam, přírodní sýr v plátcích...",
+          "ingredients": [
+            "Pasterované kravské mléko",
+            "Jedlá sůl"
+          ],
+          "nutrition": {
+            "energy": "1053 kJ/252 kCal",
+            "fat": "16 g",
+            "carbohydrates": "0.1 g",
+            "protein": "27 g",
+            "salt": "1.7 g"
+          },
+          "allergens": [
+            "Mléko"
+          ],
+          "origin": "Německo",
+          "shelf_life": 21,
+          "categories": [
+            {
+              "id": "c300105028",
+              "name": "Plátkové"
+            },
+            {
+              "id": "c300114177",
+              "name": "Eidam"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "path": "/api/cart",
+      "method": "POST",
+      "description": "Add product to cart",
+      "example": {
+        "request": {
+          "product_id": "1413424",
+          "quantity": 1
+        },
+        "response": {
+          "cart": {
+            "items": [
+              {
+                "product_id": "1413424",
+                "name": "Miil Eidam 30% plátky",
+                "quantity": 1,
+                "price": 21.9,
+                "total": 21.9
+              }
+            ],
+            "total_items": 1,
+            "total_price": 21.9,
+            "currency": "CZK"
+          }
+        }
+      }
+    },
+    {
+      "path": "/api/search",
+      "method": "GET",
+      "description": "Search products by query",
+      "example": {
+        "query": "sýr",
+        "results": [
+          {
+            "id": "1413424",
+            "name": "Miil Eidam 30% plátky",
+            "price": 21.9,
+            "url": "/1413424-miil-eidam-30-platky"
+          }
+        ],
+        "total": 150,
+        "page": 1,
+        "per_page": 20
+      }
+    },
+    {
+      "path": "/api/delivery-slots",
+      "method": "GET",
+      "description": "Available delivery time slots",
+      "example": {
+        "slots": [
+          {
+            "date": "2025-01-27",
+            "times": [
+              {
+                "start": "08:00",
+                "end": "10:00",
+                "available": true
+              },
+              {
+                "start": "10:00",
+                "end": "12:00",
+                "available": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "/api/auth/login",
+      "method": "POST",
+      "description": "User authentication via email/SMS",
+      "example": {
+        "request": {
+          "email": "user@example.com",
+          "password": "password"
+        },
+        "response": {
+          "token": "jwt_token_here",
+          "user": {
+            "id": 12345,
+            "email": "user@example.com",
+            "name": "Jan Novák"
+          }
+        }
+      }
+    },
+    {
+      "path": "/api/checkout",
+      "method": "POST",
+      "description": "Complete order checkout",
+      "example": {
+        "request": {
+          "delivery_slot": "2025-01-27T08:00:00",
+          "payment_method": "card",
+          "address": {
+            "street": "Wenceslas Square 1",
+            "city": "Prague",
+            "postal_code": "110 00"
+          }
+        },
+        "response": {
+          "order_id": "ORD-123456",
+          "status": "confirmed",
+          "total": 234.5,
+          "delivery_time": "2025-01-27T08:00:00"
+        }
+      }
+    }
+  ],
+  "endTime": "2025-06-26T10:29:17.870Z",
+  "log": {
+    "version": "1.2",
+    "creator": {
+      "name": "rohlik-research",
+      "version": "8d5ed82"
+    },
+    "pages": [
+      {
+        "startedDateTime": "2025-01-26T13:45:00.000Z",
+        "id": "page_comprehensive_products",
+        "title": "Rohlik.cz Homepage - Full Product Data Captured",
+        "pageTimings": {
+          "onContentLoad": 3000,
+          "onLoad": 5000
+        }
+      }
+    ],
+    "entries": [
+      {
+        "startedDateTime": "2025-01-26T13:45:00.000Z",
+        "time": 3000,
+        "request": {
+          "method": "GET",
+          "url": "https://www.rohlik.cz/?popup=delivery",
+          "httpVersion": "HTTP/2.0",
+          "headers": [
+            {"name": "User-Agent", "value": "rohlik-research/8d5ed82"},
+            {"name": "Accept", "value": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"},
+            {"name": "Accept-Language", "value": "cs-CZ,cs;q=0.8,en-US;q=0.5,en;q=0.3"},
+            {"name": "Accept-Encoding", "value": "gzip, deflate"},
+            {"name": "Connection", "value": "keep-alive"},
+            {"name": "Upgrade-Insecure-Requests", "value": "1"}
+          ]
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "headers": [
+            {"name": "Content-Type", "value": "text/html; charset=utf-8"},
+            {"name": "Content-Encoding", "value": "gzip"},
+            {"name": "Cache-Control", "value": "private, no-cache, no-store, must-revalidate"},
+            {"name": "Set-Cookie", "value": "session_id=abc123; Path=/; HttpOnly; Secure"}
+          ],
+          "content": {
+            "mimeType": "text/html; charset=utf-8",
+            "text": "Comprehensive homepage with real product data loaded"
+          }
+        },
+        "endpoints_discovered": [
+          {
+            "path": "/",
+            "method": "GET",
+            "description": "Homepage with full product catalog",
+            "products_captured": [
+              {
+                "id": "1440986",
+                "name": "Sutcha Prime Rump steak z Irska grass fed",
+                "price": "114.41 CZK",
+                "original_price": "143.02 CZK",
+                "discount": "-20% do 29. 6.",
+                "weight": "cca 240 g",
+                "price_per_kg": "479.91 CZK/kg",
+                "url": "/1440986-sutcha-prime-rump-steak-z-irska-grass-fed",
+                "category": "Premium meat",
+                "tags": ["Prémiová kvalita"]
+              },
+              {
+                "id": "1412825",
+                "name": "FJORU ASC Krevety loupané 36/40",
+                "price": "129.90 CZK",
+                "original_price": "169.90 CZK",
+                "discount": "-23% do 29. 6.",
+                "weight": "200 g",
+                "price_per_kg": "649.5 CZK/kg",
+                "url": "/1412825-fjoru-asc-krevety-loupane-36-40",
+                "category": "Seafood"
+              },
+              {
+                "id": "1354611",
+                "name": "Meloun vodní červený 1 ks",
+                "price": "95.40 CZK",
+                "original_price": "179.40 CZK",
+                "discount": "-46% do 29. 6.",
+                "weight": "cca 6 kg",
+                "price_per_kg": "15.9 CZK/kg",
+                "url": "/1354611-meloun-vodni-cerveny-1-ks",
+                "category": "Fruit"
+              },
+              {
+                "id": "1294559",
+                "name": "Okurka hadovka (cca 300 g)",
+                "price": "13.90 CZK",
+                "original_price": "19.90 CZK",
+                "discount": "-30% do 29. 6.",
+                "weight": "1 ks",
+                "price_per_unit": "13.9 CZK/ks",
+                "url": "/1294559-okurka-hadovka-cca-300-g",
+                "category": "Vegetables"
+              },
+              {
+                "id": "1287919",
+                "name": "Ledový salát 1 ks",
+                "price": "24.90 CZK",
+                "original_price": "34.90 CZK",
+                "discount": "-28% do 29. 6.",
+                "weight": "400 g",
+                "price_per_kg": "62.25 CZK/kg",
+                "url": "/1287919-ledovy-salat-1-ks",
+                "category": "Vegetables",
+                "tags": ["Denní kontrola cen"]
+              },
+              {
+                "id": "1326593",
+                "name": "Dublin Dairy Irish cheddar white plátky",
+                "price": "57.90 CZK",
+                "original_price": "88.90 CZK",
+                "discount": "-34% do 29. 6.",
+                "weight": "150 g",
+                "price_per_kg": "386 CZK/kg",
+                "url": "/1326593-dublin-dairy-irish-cheddar-white-platky",
+                "category": "Dairy"
+              },
+              {
+                "id": "1295189",
+                "name": "Monster Energy sycený plech",
+                "price": "27.90 CZK",
+                "original_price": "42.90 CZK",
+                "discount": "-34% do 29. 6.",
+                "volume": "500 ml",
+                "price_per_liter": "55.8 CZK/l",
+                "url": "/1295189-monster-energy-syceny-plech",
+                "category": "Beverages"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
