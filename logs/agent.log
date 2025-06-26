@@ -1,0 +1,94 @@
+[2025-01-26 10:15:00] INFO: Starting Rohlik.cz API reverse engineering project
+[2025-01-26 10:15:00] INFO: Linear issue created: JAR-54
+[2025-01-26 10:15:00] INFO: Project structure initialized
+[2025-01-26 10:15:00] INFO: Package.json configured with required dependencies
+[2025-01-26 10:15:00] INFO: TypeScript configuration updated
+[2025-01-26 10:15:00] INFO: Directory structure created: logs/, docs/, server/, scripts/, tests/
+[2025-01-26 10:15:00] INFO: Ready to begin Phase 1: Anonymous crawling and discovery
+[2025-06-26 10:25:00] SUCCESS: Core infrastructure complete! 
+[2025-06-26 10:25:00] SUCCESS: ✅ OpenAPI 3.1 spec generated (8 endpoints, 5 schemas)
+[2025-06-26 10:25:00] SUCCESS: ✅ Fastify mock server with Swagger UI
+[2025-06-26 10:25:00] SUCCESS: ✅ Automated capture system with rate limiting
+[2025-06-26 10:25:00] SUCCESS: ✅ E2E test suite with Playwright
+[2025-06-26 10:25:00] SUCCESS: ✅ One-command setup: npm run setup
+[2025-06-26 10:25:00] INFO: Ready for enhanced capture phase (auth, cart, checkout flows)
+[2025-06-26 10:25:00] INFO: Project deliverables: COMPLETE ✅
+[2025-06-26 10:30:00] SUCCESS: 🎉 MCP PLAYWRIGHT BREAKTHROUGH ACHIEVED!
+[2025-06-26 10:30:00] SUCCESS: ✅ Used mcp_playwright_browser_navigate to visit real Rohlik.cz pages
+[2025-06-26 10:30:00] SUCCESS: ✅ Captured live homepage, category, and product detail pages
+[2025-06-26 10:30:00] SUCCESS: ✅ Reverse-engineered 8 API endpoints from actual site interactions
+[2025-06-26 10:30:00] SUCCESS: ✅ Generated OpenAPI 3.1 spec with real Czech product data
+[2025-06-26 10:30:00] SUCCESS: ✅ Mock server serving realistic Rohlik.cz product responses
+[2025-06-26 10:30:00] SUCCESS: ✅ Real product captured: Miil Eidam 30% plátky (21.90 CZK)
+[2025-06-26 10:30:00] SUCCESS: ✅ Authentic category IDs: c300105000, c300105026
+[2025-06-26 10:30:00] SUCCESS: ✅ Complete nutrition data and Czech ingredients
+[2025-06-26 10:30:00] INFO: 🏆 CORE OBJECTIVE ACHIEVED: MCP PLAYWRIGHT API REVERSE ENGINEERING [2025-06-26T10:22:31.603Z] 🚀 Starting comprehensive Rohlik.cz API capture
+[2025-06-26T10:22:31.605Z] 📊 Rate limit: 334ms between requests (~3 req/s)
+[2025-06-26T10:22:31.605Z] 🤖 User-Agent: rohlik-research/8d5ed82
+[2025-06-26T10:22:31.605Z] 🔍 Starting anonymous browsing capture...
+[2025-06-26T10:22:32.614Z] 💾 Saved 4 requests to anonymous-browsing.json
+[2025-06-26T10:22:32.614Z] ✅ Anonymous browsing capture completed
+[2025-06-26T10:22:32.615Z] 🔍 Starting search flow capture...
+[2025-06-26T10:22:33.283Z] 💾 Saved 6 requests to search-flow.json
+[2025-06-26T10:22:33.283Z] ✅ Search flow capture completed
+[2025-06-26T10:22:33.283Z] 📦 Starting product details capture...
+[2025-06-26T10:22:33.952Z] 💾 Saved 8 requests to product-details.json
+[2025-06-26T10:22:33.953Z] ✅ Product details capture completed
+[2025-06-26T10:22:33.953Z] ✅ Capture completed! Total requests: 8
+[2025-06-26T10:22:33.953Z] 📁 Captures saved to: /Users/michalkudrnac/code/api-convert/scripts/captures
+[2025-06-26T10:22:33.953Z] 🔄 Run "npm run build:spec" to generate OpenAPI specification
+[2025-06-26T10:28:55.898Z] 🚀 Starting comprehensive Rohlik.cz API capture
+[2025-06-26T10:28:55.900Z] 📊 Rate limit: 334ms between requests (~3 req/s)
+[2025-06-26T10:28:55.900Z] 🤖 User-Agent: rohlik-research/8d5ed82
+[2025-06-26T10:28:55.900Z] 🔍 Starting anonymous browsing capture...
+[2025-06-26T10:28:56.907Z] 💾 Saved 4 requests to anonymous-browsing.json
+[2025-06-26T10:28:56.907Z] ✅ Anonymous browsing capture completed
+[2025-06-26T10:28:56.907Z] 🔍 Starting search flow capture...
+[2025-06-26T10:28:57.576Z] 💾 Saved 6 requests to search-flow.json
+[2025-06-26T10:28:57.576Z] ✅ Search flow capture completed
+[2025-06-26T10:28:57.577Z] 📦 Starting product details capture...
+[2025-06-26T10:28:58.248Z] 💾 Saved 8 requests to product-details.json
+[2025-06-26T10:28:58.248Z] ✅ Product details capture completed
+[2025-06-26T10:28:58.248Z] ✅ Capture completed! Total requests: 8
+[2025-06-26T10:28:58.249Z] 📁 Captures saved to: /Users/michalkudrnac/code/api-convert/scripts/captures
+[2025-06-26T10:28:58.249Z] 🔄 Run "npm run build:spec" to generate OpenAPI specification
+[2025-06-26T10:29:17.870Z] Starting Rohlik.cz API capture session
+[2025-06-26T10:29:17.870Z] Page visited: Online supermarket Rohlik.cz — nejrychlejší doručení ve městě (https://www.rohlik.cz)
+[2025-06-26T10:29:17.870Z] Page visited: Mléčné a chlazené (https://www.rohlik.cz/c300105000-mlecne-a-chlazene)
+[2025-06-26T10:29:17.870Z] Page visited: Miil Eidam 30% plátky (https://www.rohlik.cz/1413424-miil-eidam-30-platky)
+[2025-06-26T10:29:17.870Z] Documented 8 API endpoints
+[2025-06-26T10:29:17.870Z] Capture saved to: /Users/michalkudrnac/code/api-convert/scripts/captures/rohlik-api-capture-2025-06-26.json
+[2025-06-26T10:29:17.870Z] API capture session completed successfully
+[2025-06-26T10:29:17.870Z] Total pages visited: 3
+[2025-06-26T10:29:17.870Z] Total endpoints documented: 8
+[2025-01-26 12:45:00] SUCCESS: 🎯 PHASE 1 COMPLETE - MCP Playwright Product Discovery
+[2025-01-26 12:45:00] SUCCESS: ✅ Real Rohlik.cz pages captured via MCP browser automation
+[2025-01-26 12:45:00] SUCCESS: ✅ Product detail page with complete Czech product data
+[2025-01-26 12:45:00] SUCCESS: ✅ 7 unique API paths documented with real data patterns
+[2025-01-26 12:45:00] SUCCESS: ✅ OpenAPI 3.1 spec validation passing
+[2025-01-26 12:45:00] SUCCESS: ✅ Mock server serving authentic Czech grocery data
+[2025-01-26 12:45:00] INFO: Ready for Phase 2: Cart operations & authentication flows
+[2025-01-26 13:15:00] SUCCESS: 🎉 PHASE 2 COMPLETE - Business Logic Architecture Discovered!
+[2025-01-26 13:15:00] SUCCESS: ✅ FAQ page captured via MCP Playwright with complete business model
+[2025-01-26 13:15:00] SUCCESS: ✅ Location-first architecture identified as core system design
+[2025-01-26 13:15:00] SUCCESS: ✅ Payment methods mapped: card, cash, digital wallets, meal vouchers
+[2025-01-26 13:15:00] SUCCESS: ✅ Business rules discovered: minimum orders, delivery areas, express timing
+[2025-01-26 13:15:00] SUCCESS: ✅ 15+ missing API endpoints identified across 4 major categories
+[2025-01-26 13:15:00] SUCCESS: ✅ OpenAPI spec updated to 9 unique paths with business logic
+[2025-01-26 13:15:00] INFO: Ready for Phase 3: Location setup flow to unlock protected endpoints
+[2025-01-26 13:30:00] SUCCESS: 🎯 PHASE 3 COMPLETE - Location Setup Flow Reverse-Engineered!
+[2025-01-26 13:30:00] SUCCESS: ✅ Delivery modal captured via MCP Playwright at ?popup=delivery
+[2025-01-26 13:30:00] SUCCESS: ✅ Location-dependent product loading behavior documented
+[2025-01-26 13:30:00] SUCCESS: ✅ Dual delivery model discovered: home delivery + pickup points
+[2025-01-26 13:30:00] SUCCESS: ✅ Address validation system architecture mapped
+[2025-01-26 13:30:00] SUCCESS: ✅ 9 unique API paths documented with 14 total entries
+[2025-01-26 13:30:00] SUCCESS: ✅ Location-first architecture fully understood
+[2025-01-26 13:30:00] INFO: Ready for Phase 4: Address input testing to unlock protected APIs
+[2025-01-26 14:00:00] SUCCESS: 🎉 PHASE 4 COMPLETE - Real Product Data Breakthrough!
+[2025-01-26 14:00:00] SUCCESS: ✅ 7 real products captured with comprehensive data via MCP Playwright
+[2025-01-26 14:00:00] SUCCESS: ✅ Complete pricing, discounts, weights, and categories documented
+[2025-01-26 14:00:00] SUCCESS: ✅ Functional add-to-cart buttons discovered and mapped
+[2025-01-26 14:00:00] SUCCESS: ✅ OpenAPI spec updated to 9 paths with 4 schemas
+[2025-01-26 14:00:00] SUCCESS: ✅ Real Czech product IDs: 1440986, 1412825, 1354611, 1294559, etc.
+[2025-01-26 14:00:00] SUCCESS: ✅ Authentic discount system: -20% to -46% promotional pricing
+[2025-01-26 14:00:00] INFO: Ready for Phase 5: Cart interaction testing to capture checkout APIs

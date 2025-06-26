@@ -72,4 +72,5 @@ export const sessionLogger = createComponentLogger('SESSION_MANAGER');
 export const authLogger = createComponentLogger('AUTH_SERVICE');
 export const cartLogger = createComponentLogger('CART_SERVICE');
 export const productLogger = createComponentLogger('PRODUCT_SERVICE');
+export const serviceLogger = createComponentLogger('SERVICE');
 export const middlewareLogger = createComponentLogger('MIDDLEWARE'); 

@@ -1,4 +1,8 @@
-# 📋 Task Management Rule v7.0 - GitHub Integration
+# 📋 Task Management Rule **v7.1** – GitHub Integration
+
+*(supersedes v7.0 – adds mandatory **self-review & fix** workflow)*
+
+---
 
 ## 🚨 CRITICAL WORKFLOW ENFORCEMENT
 
@@ -6,226 +10,113 @@
 **REPOSITORY**: Current workspace repository
 **INTEGRATION**: Full GitHub ecosystem (Issues, PRs, Comments, Projects)
 
+---
+
 ### ⚡ **MANDATORY TASK WORKFLOW**
 
-Before ANY code implementation, you MUST follow this exact sequence:
+Before **any** code implementation, follow this exact sequence:
 
-1. **🔍 UNDERSTAND REQUEST**: Clarify user requirements fully
-2. **📋 CREATE GITHUB ISSUE**: Use `mcp_github_create_issue` tool
-3. **🌿 CREATE BRANCH**: Use `mcp_github_create_branch` for feature work
-4. **📝 PLAN IMPLEMENTATION**: Design approach and architecture
-5. **⚡ IMPLEMENT**: Write code with proper testing
-6. **📊 UPDATE GITHUB**: Use comments and PR workflow to track progress
+| #                                                                        | Phase                          | Mandatory Action                                                            |
+| ------------------------------------------------------------------------ | ------------------------------ | --------------------------------------------------------------------------- |
+| 1                                                                        | **🔍 UNDERSTAND REQUEST**      | Clarify user requirements fully                                             |
+| 2                                                                        | **📋 CREATE GITHUB ISSUE**     | `mcp_github_create_issue`                                                   |
+| 3                                                                        | **🌿 CREATE BRANCH**           | `mcp_github_create_branch`                                                  |
+| 4                                                                        | **📝 PLAN IMPLEMENTATION**     | Design approach & architecture                                              |
+| 5                                                                        | **⚡ IMPLEMENT**                | Write code with proper testing                                              |
+| 6                                                                        | **📊 OPEN PULL REQUEST**       | `mcp_github_create_pull_request`                                            |
+| 7                                                                        | **🕵️‍♂️ SELF-REVIEW PR**      | • `mcp_github_create_pending_pull_request_review`                           |
+| • Inspect diff, add line comments for every detected issue / improvement |                                |                                                                             |
+| • `mcp_github_submit_pending_pull_request_review` (state = “COMMENT”)    |                                |                                                                             |
+| 8                                                                        | **🔨 ADDRESS SELF-REVIEW**     | • Fix all items raised in step 7                                            |
+| • `mcp_github_push_files` with fixes                                     |                                |                                                                             |
+| • `mcp_github_update_pull_request` summarising changes                   |                                |                                                                             |
+| 9                                                                        | **🤝 REQUEST EXTERNAL REVIEW** | Assign human and/or Copilot reviewers                                       |
+| 10                                                                       | **🚀 MERGE & CLOSE**           | After all reviews pass ➜ `mcp_github_merge_pull_request` ➜ auto-close issue |
 
-### 🛠️ **GitHub MCP Commands**
-
-**Core Issue Management:**
-- Use `mcp_github_create_issue` for new tasks
-- Use `mcp_github_update_issue` for progress updates
-- Use `mcp_github_add_issue_comment` for detailed progress tracking
-- Use `mcp_github_list_issues` for project overview
-- Use `mcp_github_get_issue` for specific task details
-
-**Branch & PR Management:**
-- Use `mcp_github_create_branch` for feature branches
-- Use `mcp_github_create_pull_request` for code reviews
-- Use `mcp_github_update_pull_request` for PR updates
-- Use `mcp_github_merge_pull_request` when ready to merge
-- Use `mcp_github_get_pull_request_*` for PR analysis
-
-**Code Management:**
-- Use `mcp_github_create_or_update_file` for file operations
-- Use `mcp_github_push_files` for multi-file commits
-- Use `mcp_github_get_file_contents` for code review
-- Use `mcp_github_delete_file` when needed
-
-**Review & Collaboration:**
-- Use `mcp_github_create_pending_pull_request_review` for code reviews
-- Use `mcp_github_submit_pending_pull_request_review` to finalize reviews
-- Use `mcp_github_request_copilot_review` for automated feedback
-- Use `mcp_github_assign_copilot_to_issue` for AI assistance
-
-### 🚨 **VIOLATION PREVENTION**
-
-**90% CERTAINTY RULE**: If you are not 90% certain how to proceed with:
-- Integration requirements
-- Testing strategies  
-- Architecture decisions
-- GitHub workflow implications
-
-**YOU MUST ASK FOLLOW-UP QUESTIONS** before proceeding.
-
-### ❌ **FORBIDDEN ACTIONS**
-
-**NEVER do ANY of these without creating a GitHub issue first:**
-- Write new code files
-- Modify existing functionality
-- Add dependencies
-- Change configurations
-- Create services
-- Implement features
-
-### ✅ **REQUIRED ACTIONS**
-
-**ALWAYS do these for every implementation:**
-1. ✅ Create GitHub issue with clear title, description, and labels
-2. ✅ Create feature branch from main/master
-3. ✅ Include complexity estimate and priority in issue
-4. ✅ Add relevant labels (bug, enhancement, documentation, etc.)
-5. ✅ Implement with proper error handling and testing
-6. ✅ Create pull request with detailed description
-7. ✅ Request appropriate reviews (human or Copilot)
-8. ✅ Update issue with progress comments
-9. ✅ Close issue when PR is merged
-
-### 📊 **Quality Gates**
-
-Before creating any pull request:
-- ✅ Code is tested and working
-- ✅ Error handling implemented
-- ✅ Documentation updated if needed
-- ✅ No breaking changes introduced
-- ✅ Integration tested with existing system
-- ✅ Commit messages are descriptive
-- ✅ PR description links to issue
-
-### 🎯 **GitHub Workflow Patterns**
-
-**For New Features:**
-1. Create issue with `enhancement` label
-2. Create feature branch: `feature/issue-{number}-{description}`
-3. Implement with regular commits
-4. Create PR with issue reference
-5. Request review (Copilot or human)
-6. Address feedback and merge
-7. Close issue automatically via PR
-
-**For Bug Fixes:**
-1. Create issue with `bug` label
-2. Create hotfix branch: `hotfix/issue-{number}-{description}`
-3. Implement fix with tests
-4. Create PR with issue reference
-5. Fast-track review and merge
-6. Close issue automatically
-
-**For Documentation:**
-1. Create issue with `documentation` label
-2. Create docs branch: `docs/issue-{number}-{description}`
-3. Update documentation
-4. Create PR with clear examples
-5. Review and merge
-6. Close issue
-
-### 📋 **Issue Templates**
-
-**Feature Request Template:**
-```
-## 🎯 Feature Description
-[Clear description of the feature]
-
-## 📋 Requirements
-- [ ] Requirement 1
-- [ ] Requirement 2
-
-## 🏗️ Implementation Plan
-1. Step 1
-2. Step 2
-
-## ✅ Acceptance Criteria
-- [ ] Criteria 1
-- [ ] Criteria 2
-
-## 🧪 Testing Requirements
-- [ ] Unit tests
-- [ ] Integration tests
-- [ ] E2E tests (if applicable)
-```
-
-**Bug Report Template:**
-```
-## 🐛 Bug Description
-[Clear description of the bug]
-
-## 🔄 Steps to Reproduce
-1. Step 1
-2. Step 2
-
-## 📋 Expected Behavior
-[What should happen]
-
-## 📋 Actual Behavior
-[What actually happens]
-
-## 🔧 Proposed Solution
-[How to fix it]
-```
-
-### 🏷️ **Label System**
-
-**Priority Labels:**
-- `priority: critical` - Urgent fixes
-- `priority: high` - Important features
-- `priority: medium` - Standard work
-- `priority: low` - Nice to have
-
-**Type Labels:**
-- `type: bug` - Bug fixes
-- `type: enhancement` - New features
-- `type: documentation` - Documentation updates
-- `type: refactor` - Code improvements
-- `type: test` - Testing improvements
-
-**Status Labels:**
-- `status: in-progress` - Currently being worked on
-- `status: review` - Awaiting review
-- `status: blocked` - Blocked by dependencies
-- `status: ready` - Ready for implementation
-
-**Component Labels:**
-- `component: frontend` - Frontend changes
-- `component: backend` - Backend changes
-- `component: api` - API changes
-- `component: database` - Database changes
-- `component: infrastructure` - Infrastructure changes
-
-### 🎯 **Project Context**
-
-**System**: Advanced development projects with AI-powered automation
-**Architecture**: Modern web applications with microservices
-**Technology**: Node.js, TypeScript, React, Python, various APIs
-**Current Priority**: Efficient development workflow with GitHub integration
-
-### 📊 **Metrics & Tracking**
-
-**Track these metrics:**
-- Issue creation to resolution time
-- PR review time
-- Code review feedback cycles
-- Bug fix turnaround time
-- Feature delivery velocity
-
-**Use GitHub features:**
-- Projects for roadmap planning
-- Milestones for release planning
-- Labels for categorization
-- Assignees for ownership
-- Comments for progress tracking
-
-### 🔄 **Automation Opportunities**
-
-**Leverage GitHub Actions:**
-- Automatic testing on PR creation
-- Code quality checks
-- Deployment automation
-- Issue labeling automation
-- PR status updates
-
-**Use GitHub Copilot:**
-- Code generation assistance
-- Automated code reviews
-- Issue assignment for AI tasks
-- Pull request suggestions
+> **Key change**: Steps 7–8 are **non-skippable**. The agent must review its own PR **immediately** after creation and resolve every finding before soliciting external reviews.
 
 ---
 
-**⚠️ ENFORCEMENT**: This rule ensures proper GitHub-based task management with full MCP integration. Violations require immediate correction and proper GitHub workflow adoption. 
+### 🛠️ **GitHub MCP Commands**
+
+*(unchanged except for emphasis on self-review tools)*
+
+#### Core Issue Management
+
+… *(same as v7.0)* …
+
+#### Branch & PR Management
+
+… *(same as v7.0)* …
+
+#### Code Review & Collaboration
+
+* `mcp_github_create_pending_pull_request_review` **(required in step 7)**
+* `mcp_github_submit_pending_pull_request_review` **(required in step 7)**
+* `mcp_github_request_copilot_review`
+* `mcp_github_assign_copilot_to_issue`
+
+---
+
+### 🚨 **VIOLATION PREVENTION**
+
+If you are **not 90 % certain** about any workflow aspect, **ASK** follow-up questions before proceeding.
+
+Failing to perform the mandatory **self-review (steps 7–8)** is a **critical violation**.
+
+---
+
+### ❌ **FORBIDDEN ACTIONS**
+
+Never:
+
+* Skip self-review before requesting outside review
+* Merge a PR with unresolved self-review comments
+
+*(all other forbidden actions from v7.0 remain in force)*
+
+---
+
+### ✅ **REQUIRED ACTIONS**
+
+1. Create GitHub issue with clear title, description, labels
+2. Create feature branch from main/master
+3. Include complexity estimate & priority in issue
+4. Add relevant labels (bug, enhancement, documentation, …)
+5. Implement with tests & error handling
+6. Open PR referencing issue
+7. **Perform mandatory self-review (create & submit review comments)**
+8. **Fix every self-review finding and update PR**
+9. Request external reviews (human and/or Copilot)
+10. Update issue with progress comments
+11. Merge PR & auto-close issue
+
+---
+
+### 📊 **Quality Gates**
+
+Before soliciting external review:
+
+* ✅ All self-review comments addressed
+* ✅ All tests pass
+* ✅ Documentation updated
+* ✅ No breaking changes
+* ✅ PR description links to issue & summarizes self-review fixes
+
+*(other gates unchanged)*
+
+---
+
+### 🎯 **Workflow Patterns**
+
+*(each pattern now includes mandatory self-review between PR creation and external review)*
+
+* **New Features / Enhancements** …
+* **Bug Fixes** …
+* **Documentation** …
+
+---
+
+*All other sections (Issue templates, Labels, Metrics, Automation, etc.) are unchanged from v7.0 and remain in effect.*
+
+---
