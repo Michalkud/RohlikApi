@@ -17,7 +17,7 @@ export async function productRoutes(fastify: FastifyInstance) {
   const productService = ProductService.getInstance();
 
   // Get single product by ID
-  fastify.get<{ Params: ProductParams }>('/api/products/:id', async (request: FastifyRequest<{ Params: ProductParams }>, reply: FastifyReply) => {
+  fastify.get<{ Params: ProductParams }>('/:id', async (request: FastifyRequest<{ Params: ProductParams }>, reply: FastifyReply) => {
     try {
       const { id } = request.params;
       
@@ -53,7 +53,7 @@ export async function productRoutes(fastify: FastifyInstance) {
   });
 
   // Search products
-  fastify.get<{ Querystring: ProductSearchQuery }>('/api/products', async (request: FastifyRequest<{ Querystring: ProductSearchQuery }>, reply: FastifyReply) => {
+  fastify.get<{ Querystring: ProductSearchQuery }>('/', async (request: FastifyRequest<{ Querystring: ProductSearchQuery }>, reply: FastifyReply) => {
     try {
       const { q, category, limit, offset } = request.query;
       
@@ -95,7 +95,7 @@ export async function productRoutes(fastify: FastifyInstance) {
   });
 
   // Get known test products
-  fastify.get('/api/products/known', async (request: FastifyRequest, reply: FastifyReply) => {
+  fastify.get('/known', async (request: FastifyRequest, reply: FastifyReply) => {
     try {
       middlewareLogger.info('Known products request received');
 
@@ -120,7 +120,7 @@ export async function productRoutes(fastify: FastifyInstance) {
   });
 
   // Get product cache statistics
-  fastify.get('/api/products/cache/stats', async (request: FastifyRequest, reply: FastifyReply) => {
+  fastify.get('/cache/stats', async (request: FastifyRequest, reply: FastifyReply) => {
     try {
       const stats = productService.getCacheStats();
 
@@ -143,7 +143,7 @@ export async function productRoutes(fastify: FastifyInstance) {
   });
 
   // Clear product cache
-  fastify.delete('/api/products/cache', async (request: FastifyRequest, reply: FastifyReply) => {
+  fastify.delete('/cache', async (request: FastifyRequest, reply: FastifyReply) => {
     try {
       productService.clearCache();
 
